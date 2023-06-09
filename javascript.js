@@ -1,6 +1,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyBjoOgVcuBxqIJLWl_Rgp9y8woxIGf8jjQ",
   authDomain: "phoneotp-1ae30.firebaseapp.com",
+  databaseURL: "https://phoneotp-1ae30-default-rtdb.firebaseio.com",
   projectId: "phoneotp-1ae30",
   storageBucket: "phoneotp-1ae30.appspot.com",
   messagingSenderId: "260001980169",
@@ -20,6 +21,10 @@ function render() {
 
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
+  var number1 = document.getElementById("number").value;
+  firebase.database().ref("Number/").push().set({
+    number: number1,
+  });
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
@@ -38,11 +43,11 @@ function codeverify() {
   coderesult
     .confirm(code)
     .then(function () {
-      document.getElementsByClassName("p-conf")[0].style.display = "block";
-      document.getElementsByClassName("n-conf")[0].style.display = "none";
+      document.getElementsByClassName("p-conf").style.display = "block";
+      document.getElementsByClassName("n-conf").style.display = "none";
     })
     .catch(function () {
-      document.getElementsByClassName("p-conf")[0].style.display = "none";
-      document.getElementsByClassName("n-conf")[0].style.display = "block";
+      document.getElementsByClassName("p-conf").style.display = "none";
+      document.getElementsByClassName("n-conf").style.display = "block";
     });
 }
