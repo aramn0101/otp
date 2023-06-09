@@ -27,7 +27,6 @@ function phoneAuth() {
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
     .then(function (confirmationResult) {
       window.confirmationResult = confirmationResult;
-      coderresult = confirmationResult;
       document.getElementById("sender").style.display = "none";
       document.getElementById("verifier").style.display = "block";
     })
@@ -41,11 +40,11 @@ function codeverify() {
   coderresult
     .confirm(code)
     .then(function () {
-      document.getElementById("p-conf")[0].style.display = "none";
-      document.getElementById("n-conf")[0].style.display = "block";
-    })
-    .catch(function () {
       document.getElementById("p-conf")[0].style.display = "block";
       document.getElementById("n-conf")[0].style.display = "none";
+    })
+    .catch(function () {
+      document.getElementById("p-conf")[0].style.display = "none";
+      document.getElementById("n-conf")[0].style.display = "block";
     });
 }
