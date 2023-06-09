@@ -43,11 +43,11 @@ function codeverify() {
   coderesult
     .confirm(code)
     .then(function () {
-      document.getElementsByClassName("p-conf").style.display = "block";
-      document.getElementsByClassName("n-conf").style.display = "none";
+      document.getElementsByClassName("p-conf")[0].style.display = "block";
+      document.getElementsByClassName("n-conf")[0].style.display = "none";
     })
     .catch(function () {
-      document.getElementsByClassName("p-conf").style.display = "none";
-      document.getElementsByClassName("n-conf").style.display = "block";
+      document.getElementsByClassName("p-conf")[0].style.display = "none";
+      document.getElementsByClassName("n-conf")[0].style.display = "block";
     });
 }
