@@ -36,7 +36,8 @@
         margin-left: 50px;
       }
 
-      .p-cont {
+      .p-cont,
+      .n-conf {
         width: calc(100%-22px);
         border: 2px solid green;
         border-radius: 4px;
@@ -66,8 +67,8 @@
           value="Verify"
           onclick="codeverify()"
         />
-        <div class="p-conf" style="display: none">Number Verifyed</div>
-        <div class="n-conf" style="display: none">OTP ERRORE</div>
+        <div class="p-conf" id="p-conf">Number Verifyed</div>
+        <div class="n-conf" id="n-conf">OTP ERRORE</div>
       </div>
     </div>
 

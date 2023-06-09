@@ -21,10 +21,7 @@ function render() {
 
 function phoneAuth() {
   var number = "+91" + document.getElementById("number").value;
-  var number1 = document.getElementById("number").value;
-  firebase.database().ref("Number/").push().set({
-    number: number1,
-  });
+
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
@@ -38,16 +35,16 @@ function phoneAuth() {
     });
 }
 
-function codeverify() {
+function codeverify(coderesult) {
   var code = document.getElementById("verficationcode").value;
   coderesult
     .confirm(code)
     .then(function () {
-      document.getElementsByClassName("p-conf")[0].style.display = "block";
-      document.getElementsByClassName("n-conf")[0].style.display = "none";
+      document.getElementById("p-conf").style.display = "block";
+      document.getElementById("n-conf").style.display = "none";
     })
     .catch(function () {
-      document.getElementsByClassName("p-conf")[0].style.display = "none";
-      document.getElementsByClassName("n-conf")[0].style.display = "block";
+      document.getElementById("p-conf").style.display = "none";
+      document.getElementById("n-conf").style.display = "block";
     });
 }
