@@ -19,7 +19,7 @@ function render() {
 }
 
 function phoneAuth() {
-  var number = document.getElementById("number").value;
+  var number = "+91" + document.getElementById("number").value;
   firebase
     .auth()
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
