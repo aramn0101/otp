@@ -60,15 +60,17 @@
         <input type="button" id="send" value="send" onclick="phoneAuth()" />
       </div>
       <div id="verifier" style="display: none">
-        <input type="text" id="verficationcode" placeholder="Otp code" />
+        <input type="text" id="verificationcode" placeholder="Otp code" />
         <input
           type="button"
           id="verify"
           value="Verify"
           onclick="codeverify()"
         />
-        <div class="p-conf" id="p-conf">Number Verifyed</div>
-        <div class="n-conf" id="n-conf">OTP ERRORE</div>
+        <div class="p-conf" id="p-conf" style="display: none">
+          Number Verifyed
+        </div>
+        <div class="n-conf" id="n-conf" style="display: none">OTP ERRORE</div>
       </div>
     </div>
 
