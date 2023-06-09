@@ -37,13 +37,14 @@ function phoneAuth() {
 
 function codeverify() {
   var code = document.getElementById("verficationcode").value;
-  confirm(code)
+  coderresult
+    .confirm(code)
     .then(function () {
-      document.getElementById("p-conf").style.display = "block";
-      document.getElementById("n-conf").style.display = "none";
+      document.getElementById("p-conf")[0].style.display = "none";
+      document.getElementById("n-conf")[0].style.display = "block";
     })
     .catch(function () {
-      document.getElementById("p-conf").style.display = "none";
-      document.getElementById("n-conf").style.display = "block";
+      document.getElementById("p-conf")[0].style.display = "block";
+      document.getElementById("n-conf")[0].style.display = "none";
     });
 }
