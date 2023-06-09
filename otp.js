@@ -10,19 +10,10 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-var capta = false;
 render();
-
 function render() {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    "recaptcha-container",
-    {
-      size: "invisible",
-      callback: (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.\
-        capta = true;
-      },
-    }
+    "recaptcha-container"
   );
   recaptchaVerifier.render();
 }
