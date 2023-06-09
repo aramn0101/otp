@@ -36,8 +36,7 @@
         margin-left: 50px;
       }
 
-      .p-cont,
-      .n-conf {
+      .p-cont {
         width: calc(100%-22px);
         border: 2px solid green;
         border-radius: 4px;
@@ -60,17 +59,15 @@
         <input type="button" id="send" value="send" onclick="phoneAuth()" />
       </div>
       <div id="verifier" style="display: none">
-        <input type="text" id="verificationcode" placeholder="Otp code" />
+        <input type="text" id="verficationcode" placeholder="Otp code" />
         <input
           type="button"
           id="verify"
           value="Verify"
           onclick="codeverify()"
         />
-        <div class="p-conf" id="p-conf" style="display: none">
-          Number Verifyed
-        </div>
-        <div class="n-conf" id="n-conf" style="display: none">OTP ERRORE</div>
+        <div class="p-conf" style="display: none">Number Verifyed</div>
+        <div class="n-conf" style="display: none">OTP ERRORE</div>
       </div>
     </div>
 
@@ -78,6 +75,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
-    <script src="javascript.js"></script>
+    <script src="otp.js"></script>
   </body>
 </html>
