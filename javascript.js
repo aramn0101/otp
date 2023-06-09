@@ -35,10 +35,9 @@ function phoneAuth() {
     });
 }
 
-function codeverify(coderesult) {
+function codeverify() {
   var code = document.getElementById("verficationcode").value;
-  coderesult
-    .confirm(code)
+  confirm(code)
     .then(function () {
       document.getElementById("p-conf").style.display = "block";
       document.getElementById("n-conf").style.display = "none";
