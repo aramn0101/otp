@@ -27,6 +27,7 @@ function phoneAuth() {
     .signInWithPhoneNumber(number, window.recaptchaVerifier)
     .then(function (confirmationResult) {
       window.confirmationResult = confirmationResult;
+      coderresult = confirmationResult;
       document.getElementById("sender").style.display = "none";
       document.getElementById("verifier").style.display = "block";
     })
